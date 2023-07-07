@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+function createYouTubeEmbedLink (link) {
+    link = document.getElementById('link').value;
+    if (link.charAt(12) == 'y') {    //if the 13th character = y (youtube  videos)
+        var number = link.substring(32);    //key # = from 33rd character on
+        var embed = "https://www.youtube.com/embed/" + number;    //Add youtube link before key #
+        document.getElementById('iframe').src = embed;
+    }
+    else if (link.charAt(12) == 'o') {    //if the 13th character = o (vimeo videos)
+        var number = link.substring(18);    //key # = from 19th character on
+        var embed = "https://player.vimeo.com/video/" + number;    //Add vimeo link before key #
+        document.getElementById('iframe').src = embed;
+    }
+    else {}
+}
+</script>
+<body>
+    <div class="myIframe">
+    <iframe id="iframe" src="" frameborder="0" &fs=0></iframe>
+</div>
+
+
+</body>
+</html>
